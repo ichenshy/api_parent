@@ -234,6 +234,11 @@ public class UserController {
         return ResultUtils.success(userVOPage);
     }
 
+    /**
+     * 更新ak\sk
+     * @param idRequest
+     * @return
+     */
     @PostMapping("/updateAkSk")
     public BaseResponse<Boolean> updateAkSk(@RequestBody IdRequest idRequest) {
         if (idRequest == null || idRequest.getId() <= 0) {

@@ -48,6 +48,7 @@ public class ApiClient {
     }
     public String getUserNameByPost(User user) {
         String json = JSONUtil.toJsonStr(user);
+        // todo 请求可能失败，如果网关挂掉 会直接 运行时报错 这里注意捕获异常 try catch
         HttpResponse httpResponse = HttpRequest.post(GATEWAY_HOST + "/api/name/user")
                 .addHeaders(getHeadsMap(json))
                 .body(json)
